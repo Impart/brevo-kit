@@ -44,7 +44,32 @@ public struct BrevoClient {
                 )
         ).get()
         
-        guard response.status != .ok && response.status != .accepted else { return }
+        if response.status != .ok && response.status != .accepted {
+            throw BrevoError(response: response)
+        }
         
     }
+}
+
+struct BrevoError: Error {
+    
+    let response: HTTPClient.Response
+    
+    init(response: HTTPClient.Response) {
+        self.response = response
+    }
+    
+    var localizedDescription: String {
+        
+        let body: String
+        
+        if let buffer = response.body {
+            body = String(buffer: buffer)
+        } else {
+            body = "<empty body>"
+        }
+        
+        return "Brevo API error: \(response.status) : \(body)"
+    }
+    
 }
