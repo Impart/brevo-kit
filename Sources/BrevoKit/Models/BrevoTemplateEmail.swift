@@ -23,7 +23,7 @@ public struct BrevoTemplateEmail: Codable {
     let templateId: Int
     let params: [String: String]
 
-    public init(to: [Recipient], templateId: Int, params: [String, String]) {
+    public init(to: [Recipient], templateId: Int, params: [String: String]) {
         self.to = to
         self.templateId = templateId
         self.params = params
