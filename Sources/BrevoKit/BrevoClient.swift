@@ -44,7 +44,9 @@ public struct BrevoClient {
                 )
         ).get()
         
-        if response.status != .ok && response.status != .accepted {
+        if response.status != .ok &&
+            response.status != .accepted &&
+            response.status != .created {
             throw BrevoError(response: response)
         }
         
