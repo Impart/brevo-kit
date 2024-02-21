@@ -23,6 +23,11 @@ public struct BrevoClient {
         encoder.keyEncodingStrategy = .useDefaultKeys
         return encoder
     }()
+
+    public init(httpClient: HTTPClient, apiKey: String) {
+        self.httpClient = httpClient
+        self.apiKey = apiKey
+    }
     
     public func send(email: BrevoTemplateEmail) async throws {
         var headers = HTTPHeaders()
