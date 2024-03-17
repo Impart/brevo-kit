@@ -1,8 +1,9 @@
 # BrevoKit
 
-![Swift](http://img.shields.io/badge/swift-5.6-brightgreen.svg)
+![Swift](http://img.shields.io/badge/swift-5.9-brightgreen.svg)
          
          BrevoKit is a Swift package used to communicate with the Brevo API for Server Side Swift Apps.
+         It implements the bare minimum to send an email. 
          
          ## Setup
          Add the dependency to Package.swift:
@@ -27,7 +28,7 @@
             
             ## Using the API
             
-            You can use all of the available parameters here to build your `SendGridEmail`
+            You can use all of the available parameters here to build your `BrevoKitEmail`
             Usage in a route closure would be as followed:
                 
                 ~~~~swift

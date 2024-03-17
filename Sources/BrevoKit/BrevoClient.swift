@@ -13,9 +13,9 @@ import NIOFoundationCompat
 
 public struct BrevoClient {
     
-    let apiUrl = "https://api.brevo.com/v3"
-    let httpClient: HTTPClient
-    let apiKey: String
+    private let apiUrl = "https://api.brevo.com/v3"
+    private let httpClient: HTTPClient
+    private let apiKey: String
     
     private let encoder: JSONEncoder = {
         let encoder = JSONEncoder()
@@ -53,7 +53,7 @@ public struct BrevoClient {
     }
 }
 
-struct BrevoError: Error {
+public struct BrevoError: Error {
     
     let response: HTTPClient.Response
     
